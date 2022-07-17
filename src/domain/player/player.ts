@@ -6,7 +6,7 @@ export type PlayerName = string;
 export interface Player {
     emitter: EventEmitter<PlayerEvents>;
     getName(): PlayerName;
-    showCard(): Card;
+    getCard(): Card;
     protect(): void;
     dropProtect(): void;
     isProtected(): boolean;
@@ -38,7 +38,7 @@ export class PlayerImpl implements Player {
         return this.options.name;
     }
 
-    showCard(): Card {
+    getCard(): Card {
         return this.currentCard;
     }
 

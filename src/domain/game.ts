@@ -2,7 +2,7 @@ import { EventEmitter } from "./utils/eventEmitter";
 import { Card } from "./card/card";
 import { Player, PlayerName } from "./player/player";
 
-export interface GameFacade {
+export interface Game {
     emitter: EventEmitter<GameEvents>;
     getPlayer(name: PlayerName): Player;
     getCurrentPlayer(): Player;
@@ -14,4 +14,4 @@ export interface GameEvents {
     playerKilled: { player: Player };
 }
 
-export class Game {}
+export class GameImpl {}
