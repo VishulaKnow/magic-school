@@ -1,14 +1,13 @@
 import { ExecutionContext } from "../session/executionContext";
 import { CardImpl, CardInfo } from "./card";
 
-export class SupremeSorcer extends CardImpl {
+export class Warrior extends CardImpl {
     protected info: CardInfo = {
-        name: "Supreme sorcer",
-        number: 10
+        name: "Witch",
+        number: 3
     };
 
-    executeAction(context: ExecutionContext): void {
+    async executeAction(context: ExecutionContext) {
         super.executeAction(context);
-        this.executor?.kill();
     }
 }

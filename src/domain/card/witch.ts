@@ -1,4 +1,4 @@
-import { Player } from "../player/player";
+import { ExecutionContext } from "../session/executionContext";
 import { SessionMessage } from "../session/sessionMessage";
 import { CardImpl, CardInfo } from "./card";
 
@@ -8,14 +8,16 @@ export class Witch extends CardImpl {
         number: 3
     };
 
-    executeAction(player: Player): void {
-        super.executeAction(player);
-        const playerCard = player.getCard();
+    executeAction(context: ExecutionContext): void {
+        super.executeAction(context);
+        const playerCard = context.player.getCard();
 
         const message = new SessionMessage({
-            text: `Player ${player.getName()} has card ${playerCard.getInfo().name} (${playerCard.getInfo().number})`
+            text: `Player ${context.player.getName()} has card ${playerCard.getInfo().name} (${
+                playerCard.getInfo().number
+            })`
         });
 
-        this.session.postMessage(message);
+        context.session.messageBag.postMessage(message);
     }
 }

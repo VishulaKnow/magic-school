@@ -4,36 +4,34 @@ import { SupremeSorcer } from "../card/supremeSorcer";
 import { Witch } from "../card/witch";
 import { GameImpl } from "../game";
 import { Player, PlayerImpl } from "../player/player";
-import { SessionMessage } from "./sessionMessage";
+import { MessageBag } from "./messageBag";
 
 export interface Session {
-    postMessage(message: SessionMessage): void;
+    messageBag: MessageBag;
     resetCardForPlayer(player: Player): void;
 }
 
 export class SessionImpl implements Session {
+    messageBag = new MessageBag();
+
     private game: GameImpl;
 
     constructor() {
         this.game = new GameImpl({
             players: [
-                new PlayerImpl({ name: "Kanye", initialCard: new Protector(this) }),
-                new PlayerImpl({ name: "Pete", initialCard: new Protector(this) })
+                new PlayerImpl({ name: "Kanye", initialCard: new Protector() }),
+                new PlayerImpl({ name: "Pete", initialCard: new Protector() })
             ],
             cards: [
-                new SupremeSorcer(this),
-                new Protector(this),
-                new Protector(this),
-                new RuneMaster(this),
-                new RuneMaster(this),
-                new Witch(this),
-                new Witch(this)
+                new SupremeSorcer(),
+                new Protector(),
+                new Protector(),
+                new RuneMaster(),
+                new RuneMaster(),
+                new Witch(),
+                new Witch()
             ]
         });
-    }
-
-    postMessage(message: SessionMessage): void {
-        throw new Error("Method not implemented.");
     }
 
     resetCardForPlayer(player: Player): void {

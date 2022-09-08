@@ -1,4 +1,4 @@
-import { Player } from "../player/player";
+import { ExecutionContext } from "../session/executionContext";
 import { CardImpl, CardInfo } from "./card";
 
 export class Warlock extends CardImpl {
@@ -7,10 +7,10 @@ export class Warlock extends CardImpl {
         number: 7
     };
 
-    executeAction(player: Player): void {
-        super.executeAction(player);
-        const playerCard = player.getCard();
-        player.setCard(this.executor!.getCard());
+    executeAction(context: ExecutionContext): void {
+        super.executeAction(context);
+        const playerCard = context.player.getCard();
+        context.player.setCard(this.executor!.getCard());
         this.executor!.setCard(playerCard);
     }
 }

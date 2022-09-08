@@ -1,4 +1,4 @@
-import { Player } from "../player/player";
+import { ExecutionContext } from "../session/executionContext";
 import { CardImpl, CardInfo } from "./card";
 
 export class Protector extends CardImpl {
@@ -7,8 +7,8 @@ export class Protector extends CardImpl {
         number: 5
     };
 
-    executeAction(player: Player): void {
-        super.executeAction(player);
+    executeAction(context: ExecutionContext): void {
+        super.executeAction(context);
         this.executor?.protect();
     }
 }

@@ -1,4 +1,4 @@
-import { Player } from "../player/player";
+import { ExecutionContext } from "../session/executionContext";
 import { CardImpl, CardInfo } from "./card";
 
 export class RuneMaster extends CardImpl {
@@ -7,8 +7,8 @@ export class RuneMaster extends CardImpl {
         number: 6
     };
 
-    executeAction(player: Player): void {
-        super.executeAction(player);
-        this.session.resetCardForPlayer(player);
+    executeAction(context: ExecutionContext): void {
+        super.executeAction(context);
+        context.session.resetCardForPlayer(context.player);
     }
 }
