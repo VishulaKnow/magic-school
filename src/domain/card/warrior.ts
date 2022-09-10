@@ -3,11 +3,9 @@ import { CardImpl, CardInfo } from "./card";
 
 export class Warrior extends CardImpl {
     protected info: CardInfo = {
-        name: "Witch",
-        number: 3
+        name: "Warrior",
+        number: 1
     };
 
-    async executeAction(context: ExecutionContext) {
-        super.executeAction(context);
-    }
+    async executeAction(context: ExecutionContext) {}
 }

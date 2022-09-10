@@ -8,7 +8,6 @@ export class RuneMaster extends CardImpl {
     };
 
     executeAction(context: ExecutionContext): void {
-        super.executeAction(context);
         context.session.resetCardForPlayer(context.player);
     }
 }

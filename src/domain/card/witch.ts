@@ -9,7 +9,6 @@ export class Witch extends CardImpl {
     };
 
     executeAction(context: ExecutionContext): void {
-        super.executeAction(context);
         const playerCard = context.player.getCard();
 
         const message = new SessionMessage({

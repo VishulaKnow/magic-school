@@ -8,9 +8,9 @@ export class Warlock extends CardImpl {
     };
 
     executeAction(context: ExecutionContext): void {
-        super.executeAction(context);
         const playerCard = context.player.getCard();
-        context.player.setCard(this.executor!.getCard());
-        this.executor!.setCard(playerCard);
+        const executorPlayer = context.executor.getPlayer();
+        context.player.setCard(executorPlayer.getCard());
+        executorPlayer.setCard(playerCard);
     }
 }

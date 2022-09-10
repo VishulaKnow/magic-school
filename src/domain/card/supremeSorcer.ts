@@ -8,7 +8,6 @@ export class SupremeSorcer extends CardImpl {
     };
 
     executeAction(context: ExecutionContext): void {
-        super.executeAction(context);
-        this.executor?.kill();
+        context.executor?.getPlayer().kill();
     }
 }

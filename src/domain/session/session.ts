@@ -4,15 +4,15 @@ import { SupremeSorcer } from "../card/supremeSorcer";
 import { Witch } from "../card/witch";
 import { GameImpl } from "../game";
 import { Player, PlayerImpl } from "../player/player";
-import { MessageBag } from "./messageBag";
+import { MessageBus } from "./messageBus";
 
 export interface Session {
-    messageBag: MessageBag;
+    messageBag: MessageBus;
     resetCardForPlayer(player: Player): void;
 }
 
 export class SessionImpl implements Session {
-    messageBag = new MessageBag();
+    messageBag = new MessageBus();
 
     private game: GameImpl;
 

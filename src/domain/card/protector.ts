@@ -8,7 +8,6 @@ export class Protector extends CardImpl {
     };
 
     executeAction(context: ExecutionContext): void {
-        super.executeAction(context);
-        this.executor?.protect();
+        context.executor?.getPlayer().protect();
     }
 }

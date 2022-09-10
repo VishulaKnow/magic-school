@@ -1,9 +1,16 @@
+import { EventEmitter } from "../utils/eventEmitter";
 import { SessionMessage } from "./sessionMessage";
 import { SessionPrompt } from "./sessionPrompt";
 
-export class MessageBag {
+interface MessageBusEvents {
+    messagePosted: { message: SessionMessage };
+}
+
+export class MessageBus {
+    eventEmitter = new EventEmitter<MessageBusEvents>();
+
     postMessage(message: SessionMessage) {
-        throw new Error("Method not implemented.");
+        this.eventEmitter.emit("messagePosted", { message });
     }
 
     prompt(message: SessionMessage) {
