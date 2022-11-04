@@ -34,7 +34,7 @@ export class GameImpl implements Game {
         return this.playersStore.getCurrentPlayer();
     }
 
-    switchPlayer(player: Player): void {
+    switchPlayer(): void {
         this.playersStore.switchPlayer();
     }
 

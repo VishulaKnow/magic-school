@@ -1,0 +1,19 @@
+.game-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(73, 31, 23, 1) 0%, rgba(113, 38, 27, 1) 48%, rgba(73, 31, 23, 1) 100%);
+
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-page-top {
+    display: flex;
+}
+
+.game-page-bottom {
+    display: flex;
+    justify-content: center;
+}
