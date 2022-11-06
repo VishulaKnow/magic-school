@@ -2,19 +2,19 @@ import { Protector } from "../card/protector";
 import { RuneMaster } from "../card/runeMaster";
 import { SupremeSorcer } from "../card/supremeSorcer";
 import { Witch } from "../card/witch";
-import { GameImpl } from "../game";
+import { Game, GameImpl } from "../game";
 import { Player, PlayerImpl } from "../player/player";
 import { MessageBus } from "./messageBus";
 
 export interface Session {
-    messageBag: MessageBus;
+    messageBus: MessageBus;
+    game: Game;
     resetCardForPlayer(player: Player): void;
 }
 
 export class SessionImpl implements Session {
-    messageBag = new MessageBus();
-
-    private game: GameImpl;
+    messageBus = new MessageBus();
+    game: GameImpl;
 
     constructor() {
         this.game = new GameImpl({

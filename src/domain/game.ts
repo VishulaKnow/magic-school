@@ -7,6 +7,7 @@ export interface Game {
     getCurrentPlayer(): Player;
     switchPlayer(player: Player): void;
     getNextCard(): Card | null;
+    getAllPlayers(): Player[];
 }
 
 interface GameOptions {
@@ -22,6 +23,10 @@ export class GameImpl implements Game {
         if (options.players.length < 2) throw new Error("Should be more than 1 player!");
         this.playersStore = new PlayersStore(options.players);
         this.cards = options.cards;
+    }
+
+    getAllPlayers() {
+        return this.playersStore.getAllPlayers();
     }
 
     getPlayer(name: PlayerName): Player {

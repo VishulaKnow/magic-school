@@ -14,7 +14,7 @@ export class EventEmitter<E = Record<string, AnyObject>> {
     }
 
     unsubscribe<T extends keyof E>(code: T, listener: (args: E[T]) => void) {
-        this.events[code] = this.events[code]?.filter((cur) => cur != listener);
+        this.events[code] = this.events[code]?.filter((cur) => cur !== listener);
     }
 
     emit<T extends keyof E>(code: T, args?: E[T]) {

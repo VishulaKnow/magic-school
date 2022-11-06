@@ -2,7 +2,7 @@
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-    color: #f9f05d;
+    color: var(--m-s-base-font-color);
 }
 
 .player-name {

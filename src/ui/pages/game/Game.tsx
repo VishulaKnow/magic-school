@@ -1,15 +1,11 @@
 import { CardView } from "../../components/card/card";
 import { PlayerBoard } from "../../components/player/playersBoard";
-import { SupremeSorcer } from "../../../domain/card/supremeSorcer";
-import { PlayerImpl } from "../../../domain/player/player";
 import "./game.css";
+import { session } from "../../..";
 
 export const Game: React.FC = () => {
-    const players = [
-        new PlayerImpl({ name: "Supreme sorcer", initialCard: new SupremeSorcer() }),
-        new PlayerImpl({ name: "Black bird", initialCard: new SupremeSorcer() })
-    ];
-    const card = new SupremeSorcer();
+    const players = session.game.getAllPlayers();
+    const card = session.game.getCurrentPlayer().getCard();
 
     return (
         <div className="game-page">

@@ -6,4 +6,8 @@ interface SessionMessageOptions {
 
 export class SessionMessage {
     constructor(private messageOptions: SessionMessageOptions) {}
+
+    getText() {
+        return this.messageOptions.text;
+    }
 }

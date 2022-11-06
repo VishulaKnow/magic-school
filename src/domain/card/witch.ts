@@ -17,6 +17,6 @@ export class Witch extends CardImpl {
             })`
         });
 
-        context.session.messageBag.postMessage(message);
+        context.session.messageBus.postMessage(message);
     }
 }

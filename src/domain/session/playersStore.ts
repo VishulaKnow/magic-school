@@ -7,6 +7,10 @@ export class PlayersStore {
         this.currentPlayerIndex = 0;
     }
 
+    getAllPlayers() {
+        return this.allPlayers;
+    }
+
     getCurrentPlayer() {
         return this.allPlayers[this.currentPlayerIndex];
     }
