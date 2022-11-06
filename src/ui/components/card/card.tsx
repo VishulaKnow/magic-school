@@ -1,4 +1,4 @@
-import { Card } from "../../domain/card/card";
+import { Card } from "../../../domain/card/card";
 import "./card.css";
 
 interface CardViewProps {

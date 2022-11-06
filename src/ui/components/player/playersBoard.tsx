@@ -1,4 +1,4 @@
-import { Player } from "../../domain/player/player";
+import { Player } from "../../../domain/player/player";
 import { PlayerView } from "./player";
 import "./playerBoard.css";
 

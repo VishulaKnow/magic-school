@@ -1,7 +1,7 @@
 import { CardView } from "../../components/card/card";
 import { PlayerBoard } from "../../components/player/playersBoard";
-import { SupremeSorcer } from "../../domain/card/supremeSorcer";
-import { PlayerImpl } from "../../domain/player/player";
+import { SupremeSorcer } from "../../../domain/card/supremeSorcer";
+import { PlayerImpl } from "../../../domain/player/player";
 import "./game.css";
 
 export const Game: React.FC = () => {
